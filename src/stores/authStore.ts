@@ -1,6 +1,8 @@
 
 import type { IUser } from '@/interfaces';
 import { defineStore } from 'pinia';
+import { Horario } from '@/models/Horario';
+
 export const useAuthStore = defineStore('auth', {
     state: () =>({
         isLoggedIn: false as boolean,
@@ -20,8 +22,8 @@ export const useAuthStore = defineStore('auth', {
                 estado:{
                     comHorario: true,
                     aTempoDeAlterar: true,
-                    horarioMarcado: {inicio:1734306928, fim:1734307228},
-                    horariosPassados:[{inicio:1731715228, fim:1731716128},{inicio:1726445728, fim:1726446628}]
+                    horarioMarcado: new Horario(1734306928, 1734307228),
+                    horariosPassados:[new Horario(1731715228, 1731716128),new Horario(1726445728, 1726446628)]
                 }
             }
         }

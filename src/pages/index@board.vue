@@ -4,7 +4,7 @@
     <v-card-text class="align-center">
       <v-row align="center" class="h-100">
         <v-col align="center">
-          <v-img src="C:\Users\soren\Desktop\Logo.png" width="500px"></v-img>
+          <v-img src="./../assets/logo.png" width="500px"></v-img>
         </v-col>
       </v-row>
     </v-card-text>

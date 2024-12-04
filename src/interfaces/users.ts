@@ -1,3 +1,5 @@
+import type { Horario } from "@/models/Horario"
+
 interface IUser{
     username: string,
     role: string,
@@ -12,13 +14,10 @@ interface IUser{
 interface IUserEstado{
     comHorario: boolean,
     aTempoDeAlterar: boolean
-    horarioMarcado: IHorario|null,
-    horariosPassados : IHorario[]|null[]
+    horarioMarcado: Horario|null,
+    horariosPassados : Horario[]|null[]
 }
 
-interface IHorario{
-    inicio: number,
-    fim: number
-}
+
 
 export type { IUser }

@@ -8,10 +8,9 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/buildin examplees/AppFooter.vue')['default']
-    Avatar: typeof import('./components/profile-card/profile-avatar.vue')['default']
-    Header: typeof import('./components/app-header/page-header.vue')['default']
     HelloWorld: typeof import('./components/buildin examplees/HelloWorld.vue')['default']
     HorarioMarcado: typeof import('./components/profile-card/horario-marcado.vue')['default']
+    HorariosPassados: typeof import('./components/profile-card/horarios-passados.vue')['default']
     MarcarHorario: typeof import('./components/profile-card/marcar-horario.vue')['default']
     PageHeader: typeof import('./components/app-header/page-header.vue')['default']
     ProfileAvatar: typeof import('./components/profile-card/profile-avatar.vue')['default']

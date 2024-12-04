@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "core-js": "^3.37.1",
+    "luxon": "^3.5.0",
     "roboto-fontface": "*",
     "vue": "^3.4.31",
     "vuetify": "^3.6.14"
@@ -21,6 +22,7 @@
     "@eslint/js": "^9.14.0",
     "@mdi/font": "^7.4.47",
     "@tsconfig/node22": "^22.0.0",
+    "@types/luxon": "^3.4.2",
     "@types/node": "^22.9.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vue/eslint-config-typescript": "^14.1.3",

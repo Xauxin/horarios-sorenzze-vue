@@ -15,6 +15,7 @@ const myCustomLightTheme = {
       info: '#2196F3',
       success: '#4CAF50',
       warning: '#FB8C00',
+      cards: "#b2b2b2"
     },
     variables: {
       'border-color': '#000000',
