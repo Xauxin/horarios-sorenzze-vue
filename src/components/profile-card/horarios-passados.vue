@@ -3,17 +3,17 @@
         <v-card-title>Horarios Passados:</v-card-title>
         <v-card-text>
 
-                <v-card v-for="horario in user?.estado.horariosPassados" :key="horario" align="center" elevation="10" class="mb-2">
+                <v-card v-for="horario in user?.estado.horariosPassados" :key="horario?.inicio.toSeconds()" align="center" elevation="10" class="mb-2">
                     <v-card-title class="text-subtitle-2 text-center">{{
-                        horario.getDia()
+                        horario?.getDia()
                     }}</v-card-title>
                     <v-divider class="mx-3"></v-divider>
                     <v-card-text class="text-h3">{{
-                        horario.getHora()
+                        horario?.getHora()
                     }}</v-card-text>
                     <v-divider class="mx-3"></v-divider>
                     <v-card-actions>
-                        <v-btn class="ma-0 pa-0" block variant="flat" :color="horario.compareceu ? 'success' : 'error'">{{ horario.compareceu ? "compareceu" : "Não Compareceu" }}</v-btn>
+                        <v-btn class="ma-0 pa-0" block variant="flat" :color="horario?.compareceu ? 'success' : 'error'">{{ horario?.compareceu ? "compareceu" : "Não Compareceu" }}</v-btn>
                     </v-card-actions>
                 </v-card>
 
