@@ -1,14 +1,16 @@
 import {DateTime} from 'luxon'
 
-export class Horario {
+class Horario {
 
     inicio: DateTime; // ou Date, dependendo da sua API
     fim: DateTime;
 
+
   
-    constructor( inicio: number, fim: number) {
+    constructor( inicio: number, fim: number, ) {
       this.inicio = DateTime.fromSeconds(inicio).setZone("America/Sao_Paulo");
       this.fim = DateTime.fromSeconds(fim).setZone("America/Sao_Paulo");
+      
     }
   
     
@@ -21,3 +23,13 @@ export class Horario {
     }
   }
   
+  class HorarioPassado extends Horario {
+    compareceu: boolean;
+
+    constructor(inicio: number, fim: number, compareceu: boolean) {
+        super(inicio, fim);
+        this.compareceu = compareceu;
+    }
+}
+
+export {HorarioPassado, Horario}
