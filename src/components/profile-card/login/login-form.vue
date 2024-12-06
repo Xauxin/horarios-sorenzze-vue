@@ -1,7 +1,7 @@
 <template>
 <v-card color="cards">
     <v-card-text>
-        <v-form>
+        <v-form  validate-on="submit" @submit.prevent="subimit">
             <v-row class="">
                 <v-col>
                     <v-text-field prepend-inner-icon="person" label="Usuário" type="text" autocomplete="username" hide-details></v-text-field>
@@ -14,7 +14,7 @@
             </v-row>
             <v-row>
                 <v-col>
-                    <v-btn submit color="info">
+                    <v-btn type="submit" color="info">
                         Entrar
                     </v-btn>
                 </v-col>
@@ -30,4 +30,21 @@
 
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+import { useAuthStore } from '@/stores/authStore';
+
+
+
+export default{
+    methods:{
+        async subimit(event){
+            this.auth.login(event.target[0].value)
+        }
+    },
+    setup(){
+        const auth = useAuthStore()         
+        return {auth}
+    }
+}
+
+</script>

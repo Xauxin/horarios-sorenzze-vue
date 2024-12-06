@@ -11,8 +11,39 @@
   </v-card>
 </template>
 
-<script lang="ts" setup>
-  //
+<script lang="ts">
+import { watch } from 'vue'
+import { useAuthStore } from '@/stores/authStore';
+import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
+export default{
+    setup() {
+        const authStore = useAuthStore()
+        const {user, isLoggedIn} = storeToRefs(authStore)
+        const router = useRouter()
+        
+        watch(isLoggedIn, ()=>{
+            if (isLoggedIn.value){
+              router.push("/")
+            }
+        })
+        onMounted(()=>{
+          const numero = sessionStorage.getItem('login')
+          if (numero){
+            authStore.login(numero)
+          }
+          if (isLoggedIn.value){
+              router.push("/")
+            }
+
+        })
+        return{
+            user
+        }
+    },
+}
+
+
 </script>
 
 <route lang="yaml">

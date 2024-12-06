@@ -8,7 +8,7 @@ interface IUser{
     firstName: string,
     lastName: string
     img: string
-    estado: IUserEstado
+    estado: IUserEstado | null
 }
 
 interface IUserEstado{

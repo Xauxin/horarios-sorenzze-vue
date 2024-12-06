@@ -3,32 +3,35 @@
     <v-card-title class="text-center"><profile-card-header /></v-card-title>
     <v-divider class="mx-3"></v-divider>
     <v-card-text class="d-flex flex-column">
-      <v-row class="h-50">
-        <v-col>
-          <horario-marcado v-if="user?.estado.comHorario" />
-          <marcar-horario v-else />
-        </v-col>
-      </v-row>
-      <v-row class="h-50">
-        <v-col >
-          <horarios-passados></horarios-passados>
-        </v-col>
-      </v-row>
+      <cliente-index v-if="user?.role == 'cliente'"></cliente-index>
+      <admin-index v-else></admin-index>
     </v-card-text>
-  </v-card>
+</v-card>
 </template>
 
 <script lang="ts">
+import { watch } from 'vue'
 import { useAuthStore } from '@/stores/authStore';
 import { storeToRefs } from 'pinia';
-
+import { useRouter } from 'vue-router';
 export default{
     setup() {
         const authStore = useAuthStore()
-        const {user} = storeToRefs(authStore)
-
+        const {user, isLoggedIn} = storeToRefs(authStore)
+        const router = useRouter()
+        watch(isLoggedIn, ()=>{
+            if (!isLoggedIn.value){
+              router.push("/login")
+            }
+        })
         onMounted(()=>{
-            authStore.logarComHorarioDandoParaAlterar()
+          const numero = sessionStorage.getItem('login')
+          if (numero){
+            authStore.login(numero)
+          }
+          if (!isLoggedIn.value){
+              router.push("/login")
+            }
         })
         return{
             user

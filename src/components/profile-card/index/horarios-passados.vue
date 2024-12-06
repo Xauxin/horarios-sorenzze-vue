@@ -2,8 +2,7 @@
       <v-card align="center" color="cards" elevation="10" class="ma-1 overflow-y-auto" max-height="32vh">
         <v-card-title>Horarios Passados:</v-card-title>
         <v-card-text>
-
-                <v-card v-for="horario in user?.estado.horariosPassados" :key="horario?.inicio.toSeconds()" align="center" elevation="10" class="mb-2">
+                <v-card v-for="horario in user?.estado?.horariosPassados" :key="horario?.inicio.toSeconds()" align="center" elevation="10" class="mb-2">
                     <v-card-title class="text-subtitle-2 text-center">{{
                         horario?.getDia()
                     }}</v-card-title>

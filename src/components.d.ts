@@ -7,8 +7,9 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AdminIndex: typeof import('./components/profile-card/index/admin-index.vue')['default']
     AppFooter: typeof import('./components/buildin examplees/AppFooter.vue')['default']
-    copy: typeof import('./components/profile-card/login/login-socials.vue')['default']
+    ClienteIndex: typeof import('./components/profile-card/index/cliente-index.vue')['default']
     HelloWorld: typeof import('./components/buildin examplees/HelloWorld.vue')['default']
     HorarioMarcado: typeof import('./components/profile-card/index/horario-marcado.vue')['default']
     HorariosPassados: typeof import('./components/profile-card/index/horarios-passados.vue')['default']
