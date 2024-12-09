@@ -6,13 +6,19 @@
     <v-card-text>
         <v-row>
             <v-col>
-                <v-btn  size="x-large" icon="apple"></v-btn>
+                <v-btn  size="x-large" icon="apple">
+                    
+                </v-btn>
             </v-col>
             <v-col>
-                <v-btn  size="x-large" icon="google"></v-btn>
+                <v-btn  size="x-large" icon="">
+                    <v-img :src="google" height="24" width="24"></v-img>
+                </v-btn>
             </v-col>
             <v-col>
-                <v-btn  size="x-large" icon="instagram"></v-btn>
+                <v-btn  size="x-large" icon="">
+                    <v-img :src="instagram" height="24" width="24"></v-img>
+                </v-btn>
             </v-col>
         </v-row>
     </v-card-text>
@@ -20,4 +26,17 @@
 
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+import google from '@/assets/Google.svg'
+import instagram from '@/assets/Instagram.svg'
+import apple from '@/assets/Instagram.svg'
+export default{
+    setup(){
+        return{
+            google,
+            instagram,
+            apple
+        }
+    }
+}
+</script>

@@ -7,19 +7,26 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AdminIndex: typeof import('./components/profile-card/index/admin-index.vue')['default']
+    AdminAcoes: typeof import('./components/profile-card/index/admin/admin-acoes.vue')['default']
+    AdminHorarioMarcado: typeof import('./components/profile-card/index/admin/admin-horario-marcado.vue')['default']
+    AdminIndex: typeof import('./components/profile-card/index/admin/admin-index.vue')['default']
     AppFooter: typeof import('./components/buildin examplees/AppFooter.vue')['default']
-    ClienteIndex: typeof import('./components/profile-card/index/cliente-index.vue')['default']
+    ClienteHorarioMarcado: typeof import('./components/profile-card/index/cliente/cliente-horario-marcado.vue')['default']
+    ClienteHorariosPassados: typeof import('./components/profile-card/index/cliente/cliente-horarios-passados.vue')['default']
+    ClienteIndex: typeof import('./components/profile-card/index/cliente/cliente-index.vue')['default']
+    ClienteMarcarHorario: typeof import('./components/profile-card/index/cliente/cliente-marcar-horario.vue')['default']
     HelloWorld: typeof import('./components/buildin examplees/HelloWorld.vue')['default']
-    HorarioMarcado: typeof import('./components/profile-card/index/horario-marcado.vue')['default']
-    HorariosPassados: typeof import('./components/profile-card/index/horarios-passados.vue')['default']
     LoginForm: typeof import('./components/profile-card/login/login-form.vue')['default']
     LoginSocials: typeof import('./components/profile-card/login/login-socials.vue')['default']
-    MarcarHorario: typeof import('./components/profile-card/index/marcar-horario.vue')['default']
+    MarcarHorario: typeof import('./components/profile-card/index/cliente/cliente-marcar-horario.vue')['default']
     PageHeader: typeof import('./components/app-header/page-header.vue')['default']
     ProfileAvatar: typeof import('./components/profile-card/profile-avatar.vue')['default']
     ProfileCardHeader: typeof import('./components/profile-card/profile-card-header.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ViewAdminBoard: typeof import('./views/index/board/view-admin-board.vue')['default']
+    ViewAdminIndex: typeof import('./views/index/card/view-admin-index.vue')['default']
+    ViewClienteBoard: typeof import('./views/index/board/view-cliente-board.vue')['default']
+    ViewClienteIndex: typeof import('./views/index/card/view-cliente-index.vue')['default']
   }
 }

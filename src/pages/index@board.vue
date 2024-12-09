@@ -1,18 +1,29 @@
 <template>
   <v-card class="d-flex flex-column" elevation="10">
-
     <v-card-text class="align-center">
-      <v-row align="center" class="h-100">
-        <v-col align="center">
-          <v-img src="./../assets/logo.png" width="500px"></v-img>
-        </v-col>
-      </v-row>
+          <view-cliente-board v-if="user?.role == 'cliente'"></view-cliente-board>
+          <view-admin-board v-else></view-admin-board>
     </v-card-text>
   </v-card>
 </template>
 
-<script lang="ts" setup>
-  //
+
+<script lang="ts">
+import { useAuthStore } from '@/stores/authStore';
+import { storeToRefs } from 'pinia';
+
+export default{
+  setup() {
+      const authStore = useAuthStore()
+      const {user} = storeToRefs(authStore)
+      //TODO  refatorar authStore para passar sómente a role e refatorar tdoos que só precisaam disso
+      return{
+          user
+      }
+  },
+}
+
+
 </script>
 
 <route lang="yaml">
