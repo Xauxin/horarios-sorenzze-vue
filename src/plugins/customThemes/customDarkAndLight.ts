@@ -2,7 +2,7 @@ const myCustomLightTheme = {
     dark: false,
     colors: {
       background: '#c9dcfc',
-      surface: '#f3f8fe',
+      surface: '#f9fbff',
       'surface-bright': '#FFFFFF',
       'surface-light': '#EEEEEE',
       'surface-variant': '#424242',
@@ -15,7 +15,9 @@ const myCustomLightTheme = {
       info: '#2196F3',
       success: '#4CAF50',
       warning: '#FB8C00',
-      cards: "#b2b2b2"
+      cards: "#99bdf9",
+      overcard: "#699df7",
+      chips: "#02142c"
     },
     variables: {
       'border-color': '#000000',
@@ -41,7 +43,9 @@ const myCustomDarkTheme={
   dark:true,
   colors:{
     background: '#03132c',
-    surface:'#000307',
+    surface:'#282424',
+    cards:"##010914",
+    overcard:"#02142c"
   },
   variables:{}
 }
