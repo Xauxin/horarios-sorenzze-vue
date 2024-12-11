@@ -1,8 +1,8 @@
 <template>
   <v-card class="d-flex flex-column" elevation="10">
     <v-card-text class="align-center">
-          <view-index-cliente-board v-if="user?.role == 'cliente'"></view-index-cliente-board>
-          <view-index-admin-board v-else></view-index-admin-board>
+          <view-horario-cliente-board v-if="user?.role == 'cliente'"></view-horario-cliente-board>
+          <view-horario-admin-board v-else></view-horario-admin-board>
     </v-card-text>
   </v-card>
 </template>

@@ -3,8 +3,8 @@
     <v-card-title class="text-center"><profile-card-header /></v-card-title>
     <v-divider class="mx-3"></v-divider>
     <v-card-text class="d-flex flex-column">
-      <view-index-cliente-card v-if="user?.role == 'cliente'"></view-index-cliente-card>
-      <view-index-admin-card v-else></view-index-admin-card>
+      <view-horario-cliente-card v-if="user?.role == 'cliente'"></view-horario-cliente-card>
+      <view-horario-admin-card></view-horario-admin-card>
     </v-card-text>
 </v-card>
 </template>

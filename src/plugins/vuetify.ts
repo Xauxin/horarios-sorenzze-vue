@@ -14,7 +14,8 @@ import { createVuetify } from 'vuetify'
 import { myCustomLightTheme, myCustomDarkTheme } from './customThemes/customDarkAndLight'
 import { socialIcons } from './customIcons/socials'
 import { aliases, md } from 'vuetify/iconsets/md'
-
+import { VDateInput } from 'vuetify/labs/VDateInput'
+import { VTimePicker } from 'vuetify/labs/VTimePicker'
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
@@ -31,4 +32,8 @@ export default createVuetify({
       md
     }
   },
+  components:{
+    VDateInput,
+    VTimePicker
+  }
 })

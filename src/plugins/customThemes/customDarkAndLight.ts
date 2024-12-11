@@ -44,7 +44,7 @@ const myCustomDarkTheme={
   colors:{
     background: '#03132c',
     surface:'#282424',
-    cards:"##010914",
+    cards:"#010914",
     overcard:"#02142c"
   },
   variables:{}

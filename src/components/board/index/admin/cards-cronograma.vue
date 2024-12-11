@@ -1,12 +1,10 @@
 <template>
-    <v-row class="h-50">
-        <v-col>
-            <v-sheet class="d-flex justify-space-around aling-start">
-               <v-card width="120px" max-height="100%" elevation="10" class="d-flex flex-column" v-for="(cronograma,dia) in configs?.cronogramas" :key="dia" color="cards">
+        <v-sheet class="d-flex justify-space-around aling-start mb-0" color="cards">
+            <v-card width="12%" elevation="10" class="d-flex flex-column" v-for="(cronograma,dia) in configs?.cronogramas" :key="dia" color="overcard">
                 <v-card-title class="text-center text-h6 text-capitalize mb-0 pa-0">{{dia}}</v-card-title>
                 <v-card-subtitle opacity="100" :style="corAbertoFechado(cronograma.aberto)" color="black" class="text-center text-subtitle-1 font-weight-bold">{{ cronograma.aberto ? "Aberto" : "Fechado" }}</v-card-subtitle>
                 <v-card-text align="center" class="pa-1 mb-0">
-                    <v-card color="overcard" elevation="3  " width="90px" v-for="turno,index in cronograma.turnos"  :key="index" :class="index == 0 ? 'mb-2 pb-1':'mb-1 pb-1'">
+                    <v-card elevation="3" width="%" v-for="turno,index in cronograma.turnos"  :key="index" :class="index == 0 ? 'mb-2 pb-1':'mb-1 pb-1'">
                         <v-card-title class="text-subtitle-2 text-capitalize mb-0 pa-0 pt-0 border-b-thin">
                             {{turno.nome}}
                         </v-card-title>
@@ -20,25 +18,8 @@
                         </v-card-text>
                     </v-card>
                 </v-card-text >
-                <v-card-actions align=end class="mx-0 mb-1 py-0" style="min-height:fit-content ">
-                    <v-btn block variant='flat' density="compact" color="warning">Editar</v-btn>
-                </v-card-actions>
-                </v-card>
-            </v-sheet>
-        </v-col>
-    </v-row>
-    <v-row>
-        <v-col cols="5">
-            <v-card color="cards">
-                <v-card-title>Configs</v-card-title>
             </v-card>
-        </v-col>
-        <v-col cols="7">
-            <v-card color="cards">
-                <v-card-title>Excessões</v-card-title>
-            </v-card>
-        </v-col>
-    </v-row>
+        </v-sheet>
 </template>
 
 <script lang="ts">
@@ -52,7 +33,8 @@ export default{
             return{
                 backgroundColor: aberto ? 'green' : 'red',
                 color: 'white',
-                border: '1px white solid'
+                borderBottom: '1px white solid',
+                borderTop: '1px white solid'
             }
         },
         
