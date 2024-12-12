@@ -31,15 +31,14 @@ export default{
   },
   methods:{
     calendarType(tipo:number){
-      console.log(tipo)
       if(tipo == 0){
-        console.log('day')
+
         return "day"
       } else if (tipo == 2){
-        console.log('month')
+
         return 'month'
       } else if (tipo == 1){
-        console.log('week')
+
         return "week"
       }
     }
